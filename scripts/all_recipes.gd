@@ -25,17 +25,9 @@ func load_recipes() -> void:
 			
 			file_name = directory_access.get_next()
 		
-		#all_recipes.sort_custom(func(a : recipe, b : recipe): return a.specificity_score >= b.specificity_score)
+		all_recipes.sort_custom(func(a : recipe, b : recipe): return a.specificity_score > b.specificity_score)
 		
-		all_recipes.sort_custom(custom_sort)
+		#all_recipes.sort_custom(func(a, b) : return a.specificity_score > b.specificity_score)
 		
 	else:
 		print("An error has occurred while accessing the recipe directory")
-
-func custom_sort(a : recipe, b : recipe):
-	if a.specificity_score > b.specificity_score:
-		return true
-	elif a.specificity_score < b.specificity_score:
-		return false
-	else:
-		return randi_range(0, 1) == 0
