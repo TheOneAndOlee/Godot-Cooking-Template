@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ingredient" format=3 uid="uid://c55wrlr2b7lsq"]
+
+[ext_resource type="Script" uid="uid://1n4ygg64jq25" path="res://scripts/ingredient.gd" id="1_7up6p"]
+
+[resource]
+script = ExtResource("1_7up6p")
+tags = Dictionary[String, float]({
+"water": 1.0
+})
+name = "Water Bucket"
+metadata/_custom_type_script = "uid://1n4ygg64jq25"

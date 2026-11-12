@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ingredient" format=3 uid="uid://cj32rcqxm14pg"]
+
+[ext_resource type="Script" uid="uid://1n4ygg64jq25" path="res://scripts/ingredient.gd" id="1_58fma"]
+
+[resource]
+script = ExtResource("1_58fma")
+tags = Dictionary[String, float]({
+"egg": 1.0
+})
+name = "Chicken Egg"
+metadata/_custom_type_script = "uid://1n4ygg64jq25"

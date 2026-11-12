@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ingredient" format=3 uid="uid://dcmwkxtlungvs"]
+
+[ext_resource type="Script" uid="uid://1n4ygg64jq25" path="res://scripts/ingredient.gd" id="1_bjx35"]
+
+[resource]
+script = ExtResource("1_bjx35")
+tags = Dictionary[String, float]({
+"meat": 1.5,
+"pork": 1.0
+})
+name = "Pork Chop"
+metadata/_custom_type_script = "uid://1n4ygg64jq25"

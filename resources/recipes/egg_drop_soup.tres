@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="recipe" format=3 uid="uid://cq52o44uwinet"]
+
+[ext_resource type="Script" uid="uid://n7c5a8w666fn" path="res://scripts/recipe.gd" id="1_3mhi7"]
+
+[resource]
+script = ExtResource("1_3mhi7")
+tags = Dictionary[String, float]({
+"egg": 1.0,
+"water": 2.0
+})
+bannedIngredients = Dictionary[String, int]({
+"Pork Chop": 1
+})
+dish_name = "Egg Drop Soup"
+metadata/_custom_type_script = "uid://n7c5a8w666fn"
