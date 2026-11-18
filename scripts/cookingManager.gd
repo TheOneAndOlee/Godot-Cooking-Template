@@ -1,18 +1,26 @@
 extends Node
 
-func cook_recipe(input_tags : Dictionary[String, float], item_names : Dictionary[String, int]):
+func parse_ingredients(ingredients : Array[ingredient]):
+	var tag_count: Dictionary[String, float]
+	var item_count: Dictionary[String, int]
 	
-	var cleaned_tags : Dictionary[String, float]
+	for item in ingredients:
+		item_count[item.name] = item_count.get(item.name, 0) + 1
+		
+		for tag in item.tags:
+			tag_count[tag] = tag_count.get(tag, 0) + item.tags[tag]
 	
-	# Clean up tags
-	for tag in input_tags:
-		if (cleaned_tags.has(tag)):
-			cleaned_tags[tag] += input_tags[tag]
-		else:
-			cleaned_tags[tag] = input_tags[tag]
+	return [tag_count, item_count]
+	
+
+func cook_recipe(ingredients : Array[ingredient]):
+	var parsed = parse_ingredients(ingredients) 
+	
+	var input_tags = parsed[0]
+	var item_names = parsed[1]
 	
 	for curr_recipe in all_recipes.all_recipes:
-		if (_is_valid_recipe(curr_recipe, cleaned_tags, item_names)):
+		if (_is_valid_recipe(curr_recipe, input_tags, item_names)):
 			return curr_recipe
 	
 	return null
